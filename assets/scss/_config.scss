@@ -1,0 +1,56 @@
+/* Ovde pisemo promenjljive koje koristimmo u style.scss nece se komplajlovati u style.css zbog _*/
+$bgcolor: #2971c4;
+$textcolor: #fff;
+$light-gray: rgba(255, 255, 255, 0.85);
+$primary-color: #fff;
+$darkishgray: #888;
+$fourthsecc: #222222;
+$footerbg: #000;
+
+@mixin positionflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin inputs {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 25px;
+  padding: 16px 0px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+}
+%container {
+  @include positionflex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+@mixin columd {
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin transition($transition...) {
+  transition: $transition;
+}
+@mixin bgposition {
+  background-position: center;
+  background-size: cover;
+}
+//Posatavlja boju teksta u odnosu na boju pozadine
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+//Postavlja pozadinsku i boju teksta
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}

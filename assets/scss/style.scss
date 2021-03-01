@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap");
+@import "config";
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+header {
+  @include positionflex;
+  position: fixed;
+  min-width: 100%;
+  z-index: 99;
+  #sh {
+    @include set-background(transparent);
+  }
+  #hold {
+    @include positionflex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    #logo {
+      h1 {
+        margin: 20px 0px;
+        font-size: 25px;
+        font-weight: 800;
+      }
+      a {
+        color: $textcolor;
+      }
+      a:hover {
+        color: darken($textcolor, 35%);
+      }
+    }
+    nav {
+      width: 40%;
+      ul {
+        @include positionflex;
+        justify-content: space-between;
+        a {
+          color: $light-gray;
+          &:hover {
+            color: rgba($light-gray, 1);
+            box-shadow: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.container {
+  @extend %container;
+}
+#first {
+  background-image: url(../images/resume-david.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#main-text {
+  text-align: center;
+  width: 50%;
+  margin-top: 290px;
+  h1 {
+    font-weight: 700;
+    font-size: 90px;
+    letter-spacing: -3px;
+    color: $textcolor;
+  }
+  h2 {
+    border-right: solid 3px rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 36px;
+    margin: 0 auto;
+    font-weight: 400;
+    color: $textcolor;
+  }
+  /* Animation */
+  h2 {
+    animation: animated-text 2s steps(30, end) 1s 1 normal both,
+      animated-cursor 800ms steps(30, end) infinite;
+  }
+}
+
+/* text animation */
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 410px;
+  }
+}
+/* cursor animations */
+@keyframes animated-cursor {
+  from {
+    border-right-color: #fff;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+#box-for-arrow {
+  @include positionflex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  animation: moving 2s infinite ease;
+  hr {
+    width: 1px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  #outer-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 23px solid #fff;
+    border-bottom: 0px solid transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: relative;
+    @include positionflex;
+  }
+  #inner-arrow {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 17px solid #262626;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    bottom: 3px;
+    right: -9px;
+  }
+}
+@keyframes moving {
+  from {
+    bottom: 20px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+/*Second section*/
+#second {
+  background-color: $bgcolor;
+  @include set-background($bgcolor);
+  span {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+  }
+}
+.container-keeper {
+  @include positionflex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0px 7px;
+}
+.skill-box {
+  width: 1320px;
+  @include positionflex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  h3 {
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 29px;
+  }
+}
+#left-box {
+  margin-right: 30px;
+  padding-top: 10px;
+  font-size: 40px;
+  i {
+    width: 40px;
+  }
+}
+.content-box {
+  @include positionflex;
+  margin: 0px 50px 50px 10px;
+  width: 40%;
+  text-align: justify;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/*Third section*/
+#third {
+  @include set-background(darken(#fff, 2));
+  span {
+    word-wrap: break-word;
+    margin-right: 25px;
+    margin-top: 50px;
+    width: 20%;
+    h1 {
+      font-size: 26px;
+    }
+  }
+  section {
+    @include positionflex;
+    margin: 0px 5px 50px 0px;
+  }
+  #vline {
+    border-left: 2px solid #e0e0e0;
+    height: 550px;
+    position: relative;
+    @include positionflex;
+    align-items: space-between;
+    .circle1 {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: darken(#eee, 2);
+      top: 8%;
+      border: 5px solid darken(#fff, 2);
+    }
+    .circle2 {
+      @extend .circle1;
+      top: 33%;
+    }
+    .circle3 {
+      @extend .circle1;
+      top: 58%;
+    }
+    .circle4 {
+      @extend .circle1;
+      top: 82%;
+    }
+  }
+  #work_education {
+    margin-left: 50px;
+    .elements {
+      margin-top: 7%;
+    }
+  }
+  .elements {
+    p {
+      color: $darkishgray;
+      font-weight: 300;
+      font-size: 16px;
+    }
+    h2 {
+      font-size: 20px;
+      padding: 7px 0 10px 0;
+      line-height: 30px;
+    }
+    h3 {
+      @extend p;
+      font-weight: 0;
+      color: darken($darkishgray, 40%);
+      margin-bottom: 10px;
+    }
+  }
+}
+//Fourth section
+#fourth {
+  @include set-background($fourthsecc);
+  #fourths-container {
+    width: 100%;
+    #form_section {
+      @include positionflex;
+      flex-direction: column;
+      width: 80%;
+      h1 {
+        font-size: 36px;
+        margin: 20px 0px 50px 0px;
+        width: 100%;
+        text-align: center;
+      }
+      form {
+        width: 50%;
+        input {
+          @include inputs;
+          @include positionflex;
+        }
+        ::placeholder {
+          color: #bbbbbb;
+        }
+        textarea {
+          @extend input;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          position: relative;
+          border: 0px;
+          background-color: $bgcolor;
+          width: 170px;
+          border-radius: 50px;
+          text-transform: uppercase;
+          font-size: 13px;
+          text-align: center;
+          font-weight: bold;
+          margin: 0 auto;
+          margin-top: 75px;
+          padding: 20px;
+          transition: background-color 0.7s, color 0.7s;
+          &:hover {
+            background-color: white;
+            color: $fourthsecc;
+            cursor: pointer;
+          }
+        }
+      }
+      #social {
+        margin-top: 25px;
+        a {
+          color: $textcolor;
+          margin-right: 7px;
+          &:hover {
+            color: darken($textcolor, 35%);
+          }
+        }
+      }
+    }
+  }
+}
+//Fifith section
+#fifth {
+  @include set-background(#fff);
+  .container-keeper {
+    span {
+      margin-right: 25px;
+      margin-top: 50px;
+      width: 20%;
+    }
+    section {
+      #holding {
+        height: 350px;
+        width: 325px;
+        max-width: 650px;
+        position: relative;
+        border-right: 3px solid #fff;
+        margin-bottom: 25px;
+      }
+      #holding.resizable {
+        background-image: url(../images/code.png);
+        background-position: top left;
+        position: relative;
+        border-radius: 5px;
+      }
+      #holding .resizer,
+      #circle {
+        width: 38px;
+        height: 38px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 3px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        right: -22px;
+        top: 150px;
+        cursor: move;
+        .arrow-left {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 6px solid transparent;
+          border-bottom: 6px solid transparent;
+
+          border-right: 6px solid $textcolor;
+          left: 6px;
+          top: 12px;
+        }
+        .arrow-right {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 6px solid transparent;
+          border-bottom: 6px solid transparent;
+          border-left: 6px solid $textcolor;
+          right: 6px;
+          top: 12px;
+        }
+      }
+      #containerW {
+        width: 650px;
+      }
+      #pch {
+        background-image: url(../images/site.png);
+        width: 650px;
+        height: 350px;
+        position: absolute;
+        @include bgposition;
+        border-radius: 5px;
+      }
+      #project2 {
+        width: 650px;
+        height: 350px;
+        background-image: url(../images/site2.png);
+        background-position: top left;
+        border-radius: 5px;
+        transition: background-image 0.7s ease-in-out;
+        @include positionflex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+        &:hover {
+          background-image: url(../images/code2.png);
+          background-position: top left;
+          background-size: none;
+        }
+        span {
+          @include set-background(rgb(255, 0, 0));
+          padding: 5px;
+          text-align: center;
+          border-radius: 50px;
+          margin-bottom: 5px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+//Footer
+footer {
+  @include positionflex;
+  justify-content: flex-end;
+  background-color: darken($fourthsecc, 0.99);
+  max-width: 100%;
+  padding: 15px;
+  nav {
+    ul {
+      @include positionflex;
+      margin-right: 10%;
+      li {
+        border-right: 1px solid $darkishgray;
+        margin-left: 5px;
+        padding-right: 5px;
+        &:last-child {
+          border-right: 0px;
+        }
+      }
+
+      a {
+        color: $darkishgray;
+        margin-left: 5px;
+        &:hover {
+          color: rgba($light-gray, 1);
+          box-shadow: #fff;
+        }
+      }
+    }
+  }
+}
+/*-----Responsive-----*/
+@import "responsive";

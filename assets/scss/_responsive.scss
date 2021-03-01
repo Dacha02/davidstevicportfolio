@@ -1,0 +1,312 @@
+@media (max-width: 1659px) {
+  #main-text {
+    width: 80%;
+    margin-top: 290px;
+    h1 {
+      font-size: 80px;
+    }
+  }
+
+  //Fourth
+  #fourth {
+    #fourths-container {
+      #form_section {
+        width: 80%;
+        margin-left: 5px;
+        margin-right: 5px;
+        form {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  //Header
+  header {
+    #hold {
+      nav {
+        width: 50%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  //First section
+  #main-text {
+    margin-top: 350px;
+    h1 {
+      font-size: 66px;
+      line-height: 70px;
+      letter-spacing: -4px;
+    }
+  }
+  /*Second Section*/
+  #second {
+    span {
+      margin-top: 50px;
+    }
+  }
+  /*Third section*/
+  #third {
+    span {
+      width: 70%;
+      margin-bottom: 25px;
+    }
+  }
+  //Fourth
+  #fourth {
+    #fourths-container {
+      #form_section {
+        width: 80%;
+        margin-left: 5px;
+        margin-right: 5px;
+        form {
+          width: 90%;
+        }
+      }
+    }
+  }
+  //Fifth section
+  #fifth {
+    .container-keeper {
+      justify-content: center;
+      span {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  //Footer
+  footer {
+    nav {
+      margin-right: 5%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  //Header
+  header {
+    position: absolute;
+    background-color: transparent;
+    #hold {
+      @include columd;
+      nav {
+        width: 100%;
+      }
+    }
+  }
+  //First section
+  #main-text {
+    margin-top: 250px;
+    h1 {
+      font-size: 32px;
+      line-height: 50px;
+      letter-spacing: 0px;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0px;
+    }
+  }
+
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 280px;
+    }
+  }
+  /*Second section*/
+  .skill-box {
+    width: 100%;
+  }
+  .content-box {
+    width: 100%;
+    margin: 0px 5px 50px 10px;
+  }
+  .container-keeper {
+    justify-content: flex-start;
+  }
+  //Fourth
+  #fourth {
+    #fourths-container {
+      #form_section {
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+        form {
+          width: 100%;
+        }
+      }
+    }
+  }
+  //Fifth section
+  #fifth {
+    .container-keeper {
+      section {
+        #holding {
+          height: 250px;
+          width: 200px;
+          max-width: 500px;
+        }
+        #holding .resizer,
+        #circle {
+          top: 100px;
+        }
+        #containerW {
+          width: 500px;
+        }
+        #pch {
+          width: 500px;
+          height: 250px;
+        }
+        #project2 {
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  //footer
+  footer {
+    justify-content: center;
+    nav {
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 520px) {
+  //Fifth section
+  #fifth {
+    .container-keeper {
+      section {
+        #holding {
+          height: 200px;
+          width: 150px;
+          max-width: 300px;
+        }
+        #holding .resizer,
+        #circle {
+          top: 80px;
+        }
+        #containerW {
+          width: 300px;
+        }
+        #pch {
+          width: 300px;
+          height: 200px;
+        }
+        #project2 {
+          width: 300px;
+          height: 200px;
+          @include bgposition;
+          &:hover {
+            @include bgposition;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 465px) {
+  //Header
+  header {
+    #hold {
+      @include columd;
+      nav {
+        ul {
+          @include columd;
+        }
+      }
+    }
+  }
+  //First section
+  #main-text {
+    margin-top: 200px;
+  }
+  //Second section
+  .skill-box {
+    .content-box {
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 14px;
+      }
+      #left-box {
+        font-size: 30px;
+        i {
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  footer {
+    nav {
+      ul {
+        flex-direction: column;
+        li {
+          border-right: 0px;
+          margin-left: 0px;
+          padding-right: 0px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  /*First section*/
+  #main-text {
+    h2 {
+      font-size: 16px;
+    }
+  }
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 220px;
+    }
+  }
+  //Fifth section
+  #fifth {
+    .container-keeper {
+      section {
+        #holding {
+          height: 200px;
+          width: 140px;
+          max-width: 250px;
+        }
+        #holding .resizer,
+        #circle {
+          top: 80px;
+        }
+        #containerW {
+          width: 250px;
+        }
+        #pch {
+          width: 250px;
+          height: 200px;
+        }
+        #project2 {
+          width: 250px;
+          height: 200px;
+          @include bgposition;
+          &:hover {
+            @include bgposition;
+          }
+        }
+      }
+    }
+  }
+}
