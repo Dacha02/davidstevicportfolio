@@ -301,7 +301,7 @@ header {
           @extend input;
           resize: vertical;
         }
-        input[type="submit"] {
+        input[type="reset"] {
           position: relative;
           border: 0px;
           background-color: $bgcolor;
